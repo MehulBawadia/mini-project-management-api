@@ -1,0 +1,698 @@
+{
+	"info": {
+		"_postman_id": "94bd2de8-9d54-4d26-9480-9ae343bde11f",
+		"name": "Project Management",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29758516"
+	},
+	"item": [
+		{
+			"name": "Register",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "User two",
+							"description": "The name of the user.",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "usertwo@example.com",
+							"description": "The email of the user.",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "Password",
+							"description": "The password associated with the email.",
+							"type": "text"
+						},
+						{
+							"key": "password_confirmation",
+							"value": "Password",
+							"description": "The password that should match the above password.",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base_url}}/auth/register",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "email",
+							"value": "userone@example.com",
+							"description": "The email of the user.",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "Password",
+							"description": "The password associated with the email.",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base_url}}/auth/login",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Logout",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "1|c0mt3CVkmGmA9MtWoawhqpMZxUjYiSMApZmxGZd144c56f9f",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/auth/logout",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"auth",
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Projects - List",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "2|MbsbO1ObXzfRljNPLIeGwdYTnVXdIqweMOAWsFsqed06d7b4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/projects",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"projects"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Projects - Show",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "2|MbsbO1ObXzfRljNPLIeGwdYTnVXdIqweMOAWsFsqed06d7b4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/projects/2/show",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"projects",
+						"2",
+						"show"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Projects - Create",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "2|MbsbO1ObXzfRljNPLIeGwdYTnVXdIqweMOAWsFsqed06d7b4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "Project 1",
+							"description": "The title of the project.",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "The detailed description of the project",
+							"description": "The detailed description of the project",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base_url}}/projects/create",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"projects",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Projects - Update",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "2|MbsbO1ObXzfRljNPLIeGwdYTnVXdIqweMOAWsFsqed06d7b4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "Project 1 - Update",
+							"description": "The title of the project.",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "The updated detailed description of the project",
+							"description": "The detailed description of the project",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base_url}}/projects/1/edit",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"projects",
+						"1",
+						"edit"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Projects - Destroy",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "2|MbsbO1ObXzfRljNPLIeGwdYTnVXdIqweMOAWsFsqed06d7b4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/projects/2/delete",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"projects",
+						"2",
+						"delete"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Tasks - List",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "2|MbsbO1ObXzfRljNPLIeGwdYTnVXdIqweMOAWsFsqed06d7b4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/projects/2/tasks?page=1&status=done&due_date=2025-07-16",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"projects",
+						"2",
+						"tasks"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "status",
+							"value": "done"
+						},
+						{
+							"key": "due_date",
+							"value": "2025-07-16"
+						},
+						{
+							"key": "sort",
+							"value": "asc",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Tasks - Create",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "2|MbsbO1ObXzfRljNPLIeGwdYTnVXdIqweMOAWsFsqed06d7b4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "title",
+							"value": "Task 4",
+							"description": "The title of the task",
+							"type": "text"
+						},
+						{
+							"key": "status",
+							"value": "pending",
+							"description": "The status of the task: pending. in_progress, done",
+							"type": "text"
+						},
+						{
+							"key": "due_date",
+							"value": "2025-07-20",
+							"description": "The future date",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base_url}}/projects/2/tasks/create",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"projects",
+						"2",
+						"tasks",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Tasks - Show",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "2|MbsbO1ObXzfRljNPLIeGwdYTnVXdIqweMOAWsFsqed06d7b4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/projects/2/tasks/3/show",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"projects",
+						"2",
+						"tasks",
+						"3",
+						"show"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Tasks - Update",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "2|MbsbO1ObXzfRljNPLIeGwdYTnVXdIqweMOAWsFsqed06d7b4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "title",
+							"value": "Task 2",
+							"description": "The title of the task",
+							"type": "text"
+						},
+						{
+							"key": "status",
+							"value": "in_progress",
+							"description": "The status of the task: pending. in_progress, done",
+							"type": "text"
+						},
+						{
+							"key": "due_date",
+							"value": "2025-07-16",
+							"description": "The future date",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base_url}}/projects/2/tasks/4/edit",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"projects",
+						"2",
+						"tasks",
+						"4",
+						"edit"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Tasks - Update As Done",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "2|MbsbO1ObXzfRljNPLIeGwdYTnVXdIqweMOAWsFsqed06d7b4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/projects/2/tasks/4/status-done",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"projects",
+						"2",
+						"tasks",
+						"4",
+						"status-done"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Tasks - Destroy",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "2|MbsbO1ObXzfRljNPLIeGwdYTnVXdIqweMOAWsFsqed06d7b4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/projects/2/tasks/5/delete",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"projects",
+						"2",
+						"tasks",
+						"5",
+						"delete"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost:8000/api",
+			"type": "string"
+		},
+		{
+			"key": "auth_token",
+			"value": "null",
+			"type": "string"
+		}
+	]
+}
